@@ -93,8 +93,6 @@ public class LoginBean {
 				return "usermainpage";
 			} else {
 				this.uname="";
-				this.name="not exist";
-				
 				return "login";
 			}
 		} catch (Exception e) {

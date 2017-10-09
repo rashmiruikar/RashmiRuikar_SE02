@@ -106,6 +106,5 @@ public class RegisterBean {
 			}
 		}
 		return "login";
-		// return "result?faces-redirect=true";
 	}
 }
