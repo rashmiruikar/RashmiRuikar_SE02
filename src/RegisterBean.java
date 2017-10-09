@@ -80,7 +80,7 @@ public class RegisterBean {
 				this.email="";
 				this.uname="";
 				this.password="";
-				return "index";
+				return "register";
 			}
 			else
 			{

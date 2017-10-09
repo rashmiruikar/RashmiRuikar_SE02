@@ -19,6 +19,7 @@ public class LoginBean {
 	private String password;
 	private String name;
 	private String session;
+	private String present;
 
 	public String getSession() {
 		return session;
@@ -51,6 +52,14 @@ public class LoginBean {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getPresent() {
+		return present;
+	}
+
+	public void setPresent(String present) {
+		this.present = present;
+	}
+
 
 	public String login() {
 		Connection con = null;
@@ -83,6 +92,8 @@ public class LoginBean {
 				this.setName(rs.getString("Name"));
 				return "usermainpage";
 			} else {
+				this.uname="";
+				
 				return "login";
 			}
 		} catch (Exception e) {
@@ -99,12 +110,13 @@ public class LoginBean {
 		return "login";
 	}
 
+	
 	public String logout() {
 		
-		String abc =(String) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("session");
-		System.out.println("before" + abc);
+		//String sname =(String) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("session");
+		//System.out.println("before" + abc);
 		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-		System.out.println("after"+ (String) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("session")); 
+		//System.out.println("after"+ (String) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("session")); 
 		return "login";
 
 	}
