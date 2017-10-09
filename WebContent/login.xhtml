@@ -60,10 +60,7 @@ li a:hover:not (.active ) {
 </style>
 </h:head>
 <h:body>
-			
-	<div class="container">
-		
-		
+	<div class="container">	
 			<h:form class="form-horizontal" role="form">
 			<h:panelGroup rendered="#{not empty RegisterBean.name}">
     <p>Welcome #{RegisterBean.name}, you have been registered. Login here !</p>
@@ -89,6 +86,9 @@ li a:hover:not (.active ) {
 					<h:commandButton class="btn btn-primary" id="submit" value="submit"
 						action="#{LoginBean.login()}"></h:commandButton>
 				</div>
+				<h:panelGroup rendered="#{LoginBean.login = 'not exists')">
+    <p>Welcome #{RegisterBean.name}, you have been registered. Login here !</p>
+</h:panelGroup>
 				
 				
 			</h:form>
